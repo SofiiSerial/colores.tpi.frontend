@@ -2,3 +2,11 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+body {
+  background-color: #13072E;
+  background-image: url("./api/componentes/imagenes/fondo.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+ 
