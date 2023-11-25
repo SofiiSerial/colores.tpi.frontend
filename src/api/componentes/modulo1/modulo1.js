@@ -8,15 +8,12 @@ export default class Modulo1 extends React.Component{
 
     render(){
         return(
-         <div className="offset-1 col-lg-6 col-s-8 h-100">
+         <div className="conteiner">
           
-            <h1> consultá tu color </h1>
-            <h2> Ingrese sus datos en este formulario para q podamos verificar su identidad y su color correspondiente. </h2>
-            <div className="mt-20">
-               <button className="boton btn btn-warning">Continuar </button>
-            </div>
+            <div className="fs-2 text-light mt-5">Consultá tu color</div>
+            <div className="fs-5 text-light mt-5"> Ingrese sus datos en este formulario para que podamos verificar su identidad y su color correspondiente. </div>
+            <button className="boton btn btn-warning mt-5">Continuar </button>
             
-           
            <div className="contacto">
            
            </div>
