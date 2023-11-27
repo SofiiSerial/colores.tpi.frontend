@@ -17,14 +17,14 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/modulo1" element={<Modulo1/>}/>
+          <Route path="/modulo2" element={<Modulo2/>}/>
+          <Route path="/modulo3" element={<Modulo3/>}/>
+          <Route path="/modulo4" element={<Modulo4/>}/>
+          <Route path="/modulo5" element={<Modulo5/>}/>
+
           <Route path="/" element={<Inicio/>}/>
           <Route path="*" element={<Inicio/>}/>
-          <Route path="modulo1" element={<Modulo1/>}/>
-          <Route path="modulo2" element={<Modulo2/>}/>
-          <Route path="modulo3" element={<Modulo3/>}/>
-          <Route path="modulo4" element={<Modulo4/>}/>
-          <Route path="modulo5" element={<Modulo5/>}/>
-
         </Routes>
 
       </BrowserRouter>
