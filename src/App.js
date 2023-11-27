@@ -8,6 +8,7 @@ import Inicio from "./api/componentes/inicio/Inicio";
 import Modulo2 from "./api/componentes/modulo2/modulo2";
 import Modulo3 from "./api/componentes/modulo3/modulo3";
 import Modulo4 from "./api/componentes/modulo4/modulo4";
+import Modulo5 from "./api/componentes/modulo5/modulo5";
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="modulo2" element={<Modulo2/>}/>
           <Route path="modulo3" element={<Modulo3/>}/>
           <Route path="modulo4" element={<Modulo4/>}/>
+          <Route path="modulo5" element={<Modulo5/>}/>
 
         </Routes>
 

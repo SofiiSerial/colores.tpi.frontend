@@ -9,9 +9,8 @@ export default class Modulo3 extends React.Component{
     render(){
         return(
          <div className="">
-          
-            <p> Admin </p>
-            <h1> Ingrese sus datos en el formulario para que podamos verificar su identidad </h1>
+            <p className="fs-2  text-info text-light"> Admin </p>
+            <p className="fs-3 text-info text-light "> Ingrese sus datos en el formulario para que podamos verificar su identidad </p>
             <div className="mt-20">
                <button className="boton btn btn-warning"> Continuar</button>
             </div>
