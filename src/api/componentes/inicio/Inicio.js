@@ -13,7 +13,7 @@ export default class Inicio extends React.Component{
             <div className="inicio">
             <div className=" container mt-5">
                <div classs="row">
-                  <div class="col-12 bg-primary">
+                  <div class="col-12 ">
                      <p className="fs-2 text-light mt-5">
                         INTERTECNOS
                      </p>
@@ -23,7 +23,7 @@ export default class Inicio extends React.Component{
                         música, arte, matemáticas, bailes entre otros. Estas competencias fomentan el compañerismo, el espíritu deportivo y el intercambio de conocimientos entre los participantes. También son una oportunidad para mostrar talento y habilidades en diferentes áreas. 
                      </p>
                      <div className="mt-20">
-                        <button className="boton btn btn-warning">
+                        <button className="boton btn btn-warning text-dark">
                            <a class = "nav-link text-light" href="/consultarColor"> Consultar Color </a></button>
                         
                      </div>

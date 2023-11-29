@@ -10,15 +10,22 @@ export default class admin extends React.Component{
       return(
         <div className="consultarColor">
        <div className="conteiner">
-          <div className="fs-2 text-light mt-5"> Admin</div>
+          <div className="fs-2 text-light mt-5"> ADMIN </div>
           <div className="fs-4 text-light mt-5"> Ingrese sus datos en este formulario para q podamos verificar su identidad y su color correspondiente   </div>
           <form> 
             <label> 
               DNI
             </label>
             <div> 
+
+            <input 
+                className= "col-3 mx-auto text-negro bg-opacity bg-light container overflow-hidden text-center"
+                value={this.state.documento}
+                onChange={(e) => this.setState({documento:e.target.value})}
+              />
+              
               <input 
-                className= "col-3 mx-auto text-negro bg-opacity bg-light"
+                className= "col-3  mx-auto text-negro bg-opacity bg-light"
                 value={this.state.documento}
                 onChange={(e) => this.setState({documento:e.target.value})}
               />

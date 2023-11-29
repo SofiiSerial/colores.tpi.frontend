@@ -1,6 +1,17 @@
 .consultarColor  {
     flex: 1;
-    background-image: url("../imagenes/modulo2.png");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.rojo {
+background-color: rgb(216, 17, 17);
+}
+
+.amarillo {
+background-color: rgb(253, 203, 39);
+}
+
+.verde {
+background-color: rgb(31, 230, 64);
 }
