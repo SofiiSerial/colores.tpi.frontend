@@ -1,6 +1,6 @@
 import React from "react";
-import "./modulo2.css";
-export default class Modulo2 extends React.Component{
+import "./resultadoColor.css";
+export default class ResultadoColor extends React.Component{
      constructor(props){
         super(props); 
         this.state = {}

@@ -23,7 +23,9 @@ export default class Inicio extends React.Component{
                         música, arte, matemáticas, bailes entre otros. Estas competencias fomentan el compañerismo, el espíritu deportivo y el intercambio de conocimientos entre los participantes. También son una oportunidad para mostrar talento y habilidades en diferentes áreas. 
                      </p>
                      <div className="mt-20">
-                        <button className="boton btn btn-warning">Consultar Color </button>
+                        <button className="boton btn btn-warning">
+                           <a class = "nav-link text-light" href="/consultarColor"> Consultar Color </a></button>
+                        
                      </div>
                   </div>
                </div>

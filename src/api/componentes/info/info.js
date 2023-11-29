@@ -1,6 +1,6 @@
 import React from "react";
-import "./modulo4.css";
-export default class Modulo4 extends React.Component{
+import "./info.css";
+export default class Info extends React.Component{
      constructor(props){
         super(props); 
         this.state = {}

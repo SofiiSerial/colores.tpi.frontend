@@ -1,5 +1,5 @@
 import React from "react";
-import "./modulo5.css";
+import "./Juegos.css";
 
 const juegos=[
       {
@@ -14,17 +14,17 @@ const juegos=[
       },
       {
           "id_juegos": 2,
-          "dia": "¡MIÉRCOLES!",
+          "dia": "martes",
           "hora": "13:40 a 14:30",
-          "lugar": "Ana GGGGGiro",
-          "ganador": "AMARELO",
+          "lugar": "Ana giro",
+          "ganador": "amarillo",
           "turno": "tarde",
           "deporte": "nose",
           "descripcion": "dos jugadores por color"
       },
       {
           "id_juegos": 3,
-          "dia": "lunes",
+          "dia": "miercoles",
           "hora": "10:20 a 11:40",
           "lugar": "gimnacio ana giro",
           "ganador": "rojo",
@@ -34,10 +34,10 @@ const juegos=[
       },
       {
           "id_juegos": 4,
-          "dia": "¡MIÉRCOLES!",
+          "dia": "jueves",
           "hora": "13:40 a 14:30",
-          "lugar": "Ana GGGGGiro",
-          "ganador": "AMARELO",
+          "lugar": "Ana giro",
+          "ganador": "amarillo",
           "turno": "tarde",
           "deporte": "nose",
           "descripcion": "dos jugadores por color"
@@ -54,7 +54,7 @@ const juegos=[
       },
       {
           "id_juegos": 6,
-          "dia": "lunes",
+          "dia": "viernes",
           "hora": "11:40 a 12:20",
           "lugar": "gimnacio ana giro",
           "ganador": "verde",
@@ -74,7 +74,7 @@ const juegos=[
       },
       {
           "id_juegos": 8,
-          "dia": "martes",
+          "dia": "viernes",
           "hora": "13:40a14:30",
           "lugar": "colegio",
           "ganador": "amarillo",
@@ -94,7 +94,7 @@ const juegos=[
       }
   ]
 
-export default class Modulo5 extends React.Component{
+export default class Juegos extends React.Component{
      constructor(props){
         super(props); 
         this.state = {
@@ -108,6 +108,7 @@ export default class Modulo5 extends React.Component{
 
     actualizar(){
       //consulta de axios
+      //usar esto para obtener el color y mostrarlo en la pagina 
       let dias = juegos.map((juego)=> juego.dia)
       
       dias = dias.filter((dia,index) =>{
