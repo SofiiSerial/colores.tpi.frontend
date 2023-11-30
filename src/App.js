@@ -33,6 +33,9 @@ export default function App() {
                         <li class="nav-item">
                             <a class="nav-link text-light" href="/Admin">Admin</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/resultadoColor"> Color Ganador</a>
+                        </li>
                     </ul>
       <BrowserRouter>
         <Routes>

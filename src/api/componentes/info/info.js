@@ -12,7 +12,7 @@ export default class Info extends React.Component{
             <div className="container mt-3">
                   <div classs="row">
                   <div class="col-12">
-                  <p className="fs-2 text-light mt-5"> Datos que necesitas saber de las intertecno... </p>
+                  <p className="fs-2 text-light mt-5 border"> <strong> Datos que necesitas saber de las intertecno...</strong> </p>
                   </div>
                      <div class="container mt-4">
                            <div class="row">
@@ -44,22 +44,22 @@ export default class Info extends React.Component{
                <div className="container mt-5">
                <div classs="row">
                   <div class="col-sm text-light">
-                  <p className="fs-2 text-light mt-5"> Capitanes de los diferentes colores 2023 </p>
-                  <p className="fs-4 text-light"> los mismos se encargan de acomapañar al alumno a jugar y a divertirse, son los organizadores de los juegos </p>
+                  <p className="fs-2 text-light mt-5 border"> Capitanes de los diferentes colores 2023 </p>
+                  <p className="fs-4 text-light"> Los mismos se encargan de acomapañar al alumno a jugar y a divertirse, son los organizadores de los juegos </p>
                </div>
 
-               <div class="container mt-5">
+               <div class="container mt-5 ">
                   <div class="row">
-               <div class="col-sm col-md-4 rounded-3 text-warning">
-               <p class="nav-link text-warning" href="#"> AMARILLO </p> 
+               <div class="col-sm  ps-5 col-md-4 rounded-3 text-warning">
+               <p class="nav-link text-warning "> AMARILLO </p> 
                   Captanes : Fatima Silva, Lautaro Zunia, Oriana Longo,Neli Montalva, Kiara Destellos, Camila Ozuna, Juaco Molina, Denis Montalva, Lautaro Olmos, Luisana Lopes, Martin Gonzales,Martina Cortez.
                </div>
-               <div class="col-sm col-md-4  rounded-3 text-danger">
-               <p class="nav-link text-danger" href="#"> ROJO </p> 
+               <div class="col-md-4  ps-5 rounded-3 text-danger">
+               <p class="nav-link text-danger"> ROJO </p> 
                   Captanes : Fatima Silva, Lautaro Zunia, Oriana Longo,Neli Montalva, Kiara Destellos, Camila Ozuna, Juaco Molina, Denis Montalva, Lautaro Olmos, Luisana Lopes, Martin Gonzales,Martina Cortez.
                </div>
-               <div class="col-sm col-md-4  rounded-3 text-success">
-               <p class="nav-link text-success" href="#"> VERDE </p> 
+               <div class="col-sm col-md-4 ps-5 rounded-3 text-success">
+               <p class="nav-link text-success"> VERDE </p> 
                   Captanes : Fatima Silva, Lautaro Zunia, Oriana Longo,Neli Montalva, Kiara Destellos, Camila Ozuna, Juaco Molina, Denis Montalva, Lautaro Olmos, Luisana Lopes, Martin Gonzales,Martina Cortez.
                   </div>
                   </div> 

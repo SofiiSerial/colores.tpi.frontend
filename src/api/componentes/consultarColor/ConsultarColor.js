@@ -7,7 +7,6 @@ export default class ConsultarColor extends React.Component{
         super(props); 
         this.state ={ 
           documento : "",
-          usuario:null, 
           resultadoC:null
 
           //agregar resultado como color amarrillo
@@ -23,7 +22,7 @@ export default class ConsultarColor extends React.Component{
         .then((resp) => {
             //tenemos q insertar lo q queremos mostrar
           console.log(resp.data.resultado); //muesttra en consola despues se elimina
-          this.setState({resultadoC: resp.data.resultado});
+          this.setState({resultadoC: resp.data.resultado}); //
         })
         .catch((error)=>{
           console.log(error);
@@ -55,10 +54,10 @@ export default class ConsultarColor extends React.Component{
            { this.state.resultadoC !==null&&
            
            <div class="container m-10" className={this.state.resultadoC[0].color} >
-               <p className="fs-2 text-light mt-5 col-md-4"> Tu color es:  </p>
-               <p class="text-light border bg-opacity-10 p-4 mt-5 col-md-9 rounded-3"  > {this.state.resultadoC[0].color}</p>
+               <p className="fs-2 text-light mt-5 py-3  col-12"> Tu color es:  </p>
+               <p class="text-light border bg-opacity-10 p-4 mt-4 col-md-12 rounded-3"  > {this.state.resultadoC[0].color}</p>
 
-               <p className="fs-4 text-info text-light mt-5 col-md-9"> Una vez asignado su color tendrá que venir con la vestimenta (remera, pantalon) adecuados a el color, <br/>
+               <p className="fs-4 text-info-center text-light mt-5 px-5 col-12"> Una vez asignado su color tendrá que venir con la vestimenta (remera, pantalon) adecuados a el color, <br/>
                despues tendra que ir a su tribuna que será acompañado en el momentos por su capitan. </p>     
            </div>
            }

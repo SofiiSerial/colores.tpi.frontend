@@ -1,6 +1,7 @@
 import React from "react";
 import "./Inicio.css";
 import "bootstrap";
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"></link>
 
 export default class Inicio extends React.Component{
      constructor(props){
@@ -17,11 +18,11 @@ export default class Inicio extends React.Component{
                      <p className="fs-2 text-light mt-5">
                         INTERTECNOS
                      </p>
-                     <p className="fs-4 text-light mt-5">
+                     <p className="fs-4 text-light mt-5"> <em>
                         Las intertecnos o intercolegiales son eventos organizado 
                         por el colegio, en los que los estudiantes compiten en diversas disciplinas como deportes, 
                         música, arte, matemáticas, bailes entre otros. Estas competencias fomentan el compañerismo, el espíritu deportivo y el intercambio de conocimientos entre los participantes. También son una oportunidad para mostrar talento y habilidades en diferentes áreas. 
-                     </p>
+                        </em></p>
                      <div className="mt-20">
                         <button className="boton btn btn-warning text-dark">
                            <a class = "nav-link text-light" href="/consultarColor"> Consultar Color </a></button>
@@ -33,8 +34,18 @@ export default class Inicio extends React.Component{
             
                </div>
             </div>
-            </div>
+                  <footer>
+                  <div class="container-fluid  bg-dark p-5 text-center">
+                    <div class="row" >
+                        <div class="col"> <a href="" class="text-decoration-none text-seccess"> <i class="bi bi-instagram"></i> Instragram</a></div>
 
+
+                  </div>
+                      </div>
+                  </footer>
+
+            </div>
+         
       );}
 
 }

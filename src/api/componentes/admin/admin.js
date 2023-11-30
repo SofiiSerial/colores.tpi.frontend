@@ -3,7 +3,8 @@ import "./admin.js";
 export default class admin extends React.Component{
      constructor(props){
         super(props); 
-        this.state = {}
+        this.state = { usuario:"",contrasenia:""}
+        
     }
 
     render(){
@@ -20,14 +21,14 @@ export default class admin extends React.Component{
 
             <input 
                 className= "col-3 mx-auto text-negro bg-opacity bg-light container overflow-hidden text-center"
-                value={this.state.documento}
-                onChange={(e) => this.setState({documento:e.target.value})}
+                value={this.state.ususario}
+                onChange={(e) => this.setState({ususario:e.target.value})}
               />
               
               <input 
                 className= "col-3  mx-auto text-negro bg-opacity bg-light"
-                value={this.state.documento}
-                onChange={(e) => this.setState({documento:e.target.value})}
+                value={this.state.contrase}
+                onChange={(e) => this.setState({contrase:e.target.value})}
               />
             </div>
             <button className="boton btn btn-warning mt-5" onClick={(e) => this.enviar(e)}> Continuar </button>
