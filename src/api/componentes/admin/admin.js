@@ -1,11 +1,30 @@
 import React from "react";
-import "./admin.js";
+import axios from "axios";
+import "bootstrap";
+
 export default class admin extends React.Component{
      constructor(props){
         super(props); 
         this.state = { usuario:"",contrasenia:""}
+    
         
     }
+    enviar(e){  
+      e.preventDefault()
+      const url = "http://localhost:3203/api/usuarios/login" //sin el valor de documento
+      const config = {
+        params: { usuario: this.state.usuario, contrasenia: this.state.contrasenia}
+      }
+      
+      axios.post(url, config)
+      .then((resp) => {
+        console.log(resp.data);
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+     
+  } 
 
     render(){
       return(
@@ -14,24 +33,22 @@ export default class admin extends React.Component{
           <div className="fs-2 text-light mt-5"> ADMIN </div>
           <div className="fs-4 text-light mt-5"> Ingrese sus datos en este formulario para q podamos verificar su identidad y su color correspondiente   </div>
           <form> 
-            <label> 
-              DNI
-            </label>
-            <div> 
-
-            <input 
-                className= "col-3 mx-auto text-negro bg-opacity bg-light container overflow-hidden text-center"
-                value={this.state.ususario}
-                onChange={(e) => this.setState({ususario:e.target.value})}
-              />
-              
+            <div class="form-floating mb-3">
               <input 
-                className= "col-3  mx-auto text-negro bg-opacity bg-light"
-                value={this.state.contrase}
-                onChange={(e) => this.setState({contrase:e.target.value})}
-              />
+              value={this.state.usuario}
+              onChange={(e) => this.setState({usuario:e.value}) }
+              type="text" class="form-control mt-3 " id="usiario" placeholder="usuario"/>
+              <label for="">Admin</label>
+
+            <div class="form-floating ">
+             <input 
+             value={this.state.contrasenia}
+             onChange={(e) => this.setState({contrasenia:e.value}) }
+             type="password" class="form-control mt-3 " id="contrasenia" placeholder="Password"/>
+               <label for="floatingPassword">Password</label>
             </div>
-            <button className="boton btn btn-warning mt-5" onClick={(e) => this.enviar(e)}> Continuar </button>
+            </div>
+            <button className="boton btn btn-warning mt-3" onClick={(e) => this.enviar(e)}> Continuar </button>
          </form>
             <div> 
          
@@ -39,6 +56,5 @@ export default class admin extends React.Component{
        </div>
        </div>  
 
-     );}
-
-}
+    );}
+ }

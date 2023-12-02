@@ -14,7 +14,7 @@ export default class ConsultarColor extends React.Component{
       }
       enviar(e){  
         e.preventDefault()//previene q esa pagina se actualize sola 
-        const url = "http://localhost:3203/api/puntajes/resultadoColor" //sin el valor de documento
+        const url = "http://localhost:3203/api/puntjes/resultadoColor" //sin el valor de documento
         const config = {
           params: { puntajes: this.state.documento }
         }
@@ -38,19 +38,15 @@ export default class ConsultarColor extends React.Component{
             <div className="fs-4 text-light mt-5">En esta seccion de la pagina se podra ver al finalizar la semana de intecnos el equipo ganador con mas puntaje de este año </div>
 
         <div className="contacto">
-            <div className="fs-4 text-light mt-5">En esta seccion de la pagina se podra ver al finalizar la semana de intecnos el equipo ganador con mas puntaje de este año </div>
-
-
-           { this.state.resultadoC !==null&&
+    
            
-           <div class="container m-10" className={this.state.resultadoC[0].color} >
-               <p className="fs-2 text-light mt-5 py-3  col-12"> Tu color es:  </p>
-               <p class="text-light border bg-opacity-10 p-4 mt-4 col-md-12 rounded-3"  > {this.state.resultadoC[0].color}</p>
+           <div class="container m-10"  >
+               <p class="text-light border bg-opacity-10" > </p>
 
                <p className="fs-4 text-info-center text-light mt-5 px-5 col-12"> Una vez asignado su color tendrá que venir con la vestimenta (remera, pantalon) adecuados a el color, <br/>
                despues tendra que ir a su tribuna que será acompañado en el momentos por su capitan. </p>     
            </div>
-           }
+          
 
         
            </div>

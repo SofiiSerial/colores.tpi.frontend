@@ -1,9 +1,6 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
-  flex: 1;
-display: flex;
-justify-content: center;
+  
 }
 
 #root{
@@ -13,10 +10,5 @@ justify-content: center;
 
 body {
   background-color: #13072E;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 100vw;
-  min-height: 100vh;
-  display: flex ;
-}
  
+}
