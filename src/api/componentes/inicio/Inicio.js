@@ -14,7 +14,7 @@ export default class Inicio extends React.Component{
             <div className="inicio">
             <div className=" container mt-5">
                <div classs="row">
-                  <div class="col-12 ">
+                  <div className="col-12 ">
                      <p className="fs-2 text-light mt-5">
                         INTERTECNOS
                      </p>
@@ -35,9 +35,9 @@ export default class Inicio extends React.Component{
                   </div>
             </div>
                   <footer>
-                  <div class="container-fluid p-5 ">
-                     <div class="row" >
-                        <div class="col"> <a href="https://instagram.com/intertecnos_2023?igshid=YzAwZjE1ZTI0Zg==" class="text-decoration-none text-seccess"> Instragram</a></div>
+                  <div className="container-fluid p-5 ">
+                     <div className="row" >
+                        <div className="col"> <a href="https://instagram.com/intertecnos_2023?igshid=YzAwZjE1ZTI0Zg==" class="text-decoration-none text-seccess"> Instragram</a></div>
 
 
                   </div>
