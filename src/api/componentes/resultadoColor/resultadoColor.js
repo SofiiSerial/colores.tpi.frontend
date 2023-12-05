@@ -13,16 +13,17 @@ export default class ConsultarColor extends React.Component{
         }
       }
       obtenerResultado(){  
-        
+        console.log("llamando a la api");
         const url = "http://localhost:3203/api/puntajes/ganador" //sin el valor de documento
         const config = {
           
         }
         axios.get(url, config)
         .then((resp) => {
-            //tenemos q insertar lo q queremos mostrar
+          console.log("obteniendo resultado")
           console.log(resp.data.ganador); //muesttra en consola despues se elimina
-          this.setState({resp.data.ganador});
+          this.setState(resp.data.ganador[0]);
+          //this.setState({color: resp.data.ganador.color});
           console.log(this.state)
         })
         .catch((error)=>{
@@ -40,16 +41,16 @@ export default class ConsultarColor extends React.Component{
         return(
         <div className= "">
           <div className="mb-3">
-          <label className="form-label">COLOR</label>
-          <div className = "form-control"  placeholder="COLOR">
+          <p className="form-label">COLOR</p>
+          <p> {this.state.color}</p>
           </div>
-        </div>
+        
         <div class="mb-3">
-          <label  class="form-label">Puntaje</label>
-          <div className = "form-control"  placeholder="Puntaje">
+          <p  class="form-label">PUNTAJE</p>
+          <p> {this.state.puntaje}</p>
           </div>
         </div>
-      </div>
+    
  
    );}
  
