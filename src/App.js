@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+
 import ConsultarColor from "./api/componentes/consultarColor/ConsultarColor";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./api/componentes/inicio/Inicio";
@@ -8,11 +9,12 @@ import Admin from "./api/componentes/admin/admin";
 import Info from "./api/componentes/info/info";
 import Juegos from "./api/componentes/Juegos/Juegos";
 
-export default function App() {
+
+  export default function App() {
   return (
     <div className="App">
       <div>
-                    <ul className="nav justify-content-end mt-4 rounded-2">
+                    <ul className="nav mt-4 rounded-2 text-left"> 
                         <li className="nav-item">
                             <a className="nav-link active text-light" aria-current="page" href="/">Inicio</a>
                         </li>
@@ -44,5 +46,5 @@ export default function App() {
       </div>
     </div>
 
-  );
+   );
 }

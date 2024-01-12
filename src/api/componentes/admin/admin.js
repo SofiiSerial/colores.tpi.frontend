@@ -39,6 +39,7 @@ export default class admin extends React.Component{
             <div class="form-floating mb-3">
               <input 
               value={this.state.usuario}
+
               onChange={(e) => this.setState({usuario:e.target.value})}
               type="text" class="form-control mt-3 " id="usuario" placeholder="usuario"/>
               <label for="usuario">Admin</label>

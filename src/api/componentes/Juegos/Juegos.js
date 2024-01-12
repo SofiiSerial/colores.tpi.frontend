@@ -1,27 +1,31 @@
 import React from "react";
 import "./Juegos.css";
 import axios from "axios"; 
+import InfoJuego from "../infoJuego/infoJuego";
+
 
 export default class Juegos extends React.Component{
      constructor(props){
         super(props); 
         this.state = {
           diasJuegos:[],
-          juegos:[] //aca creamos un tipo de variable para un array
-        }
+        
+            //juegos:[] //aca creamos un tipo de variable para un array
+      }
     }
     componentDidMount(){
-      this.actualizar() 
+    this.mostrar(); 
   }
 
-  enviar(e){
-    e.preventDefault()//previene q esa pagina se actualize sola
+  /*enviar(e){
+    e.preventDefault();//previene q esa pagina se actualize sola
     const url = "http://localhost:3203/api/juegos" //
     const config = {
       params: {}
     }
     axios.get(url, config)
     .then((resp) => {
+      
        //tenemos q insertar lo q queremos mostrar
         console.log(resp.data); //muesttra en consola despues se elimina
       //this.setState({resultadoC: resp.data.resultado}); //
@@ -29,36 +33,43 @@ export default class Juegos extends React.Component{
     .catch((error)=>{
       console.log(error);
     })
-  }
+  }*/
 
-   actualizar(){
+   mostrar(){
       //consulta de axios
       const url = "http://localhost:3203/api/juegos" //llama a la basse de datos
       const config = {
         params: {}
       }
-      axios.put(url, config)
+      //const diasSemana =["lunes","martes","miercoles","jueves","viernes"];
+      axios.get(url)
       .then((resp) => {
-        const juegos= resp.data.juegos
-        //usar esto para obtener el color y mostrarlo en la pagina 
-        const dias = juegos.map((juego)=> juego.dia);
-        dias = dias.filter((dia,index) =>{
-          return dias.indexOf(dia)==index;
-        })
-        let diasJuegos = dias.map((dia) =>{
-          return{
+        //console.log(resp.data);
+        const juegos= resp.data.juegos;
+        //console.log(juegos);
+        let diasJuegos = [];
+        //para no repetir los dias, se crea un conjunto. Los conjuntos (set) no tienen duplicados
+        let diasUnicos = new Set();
+
+        // Filtra los días únicos
+        juegos.forEach((juego) => {
+          diasUnicos.add(juego.dia);
+        });
+
+        // Crea el array diasJuegos
+        diasUnicos.forEach((dia) => {
+          diasJuegos.push({
             dia,
-            juegos:juegos.filter((juego) => juego.dia == dia)
-          }
-        })
+            juegos: juegos.filter((juego) => juego.dia === dia),
+          });
+        });
         this.setState({diasJuegos})
-        //tenemos q insertar lo q queremos mostrar
-        console.log(resp.data); //muesttra en consola despues se elimina
-        //this.setState({resultadoC: resp.data.resultado}); //
+       
       })
       .catch((error)=>{
         console.log(error);
       })
+      
     }
 
     render(){
@@ -69,14 +80,15 @@ export default class Juegos extends React.Component{
                 <div className="col-12">
                   <p className="fs-2 text-light mt-5">
                   <strong> Juegos que se realizaran en la semana </strong></p>
-                </div>
+                </div> 
+                
                 {this.state.diasJuegos.map((dia,index) => {
                   return(
                     <div className="col text-light border" key={index}>
                       <h3>{dia.dia}</h3>
                       {dia.juegos.map((juego,index) => {
                         return(
-                          <p key={index}>{juego.deporte}</p>
+                          <InfoJuego key={index}juego={juego}/>
                         )
                       })}
                     </div>

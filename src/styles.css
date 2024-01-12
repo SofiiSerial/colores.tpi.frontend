@@ -1,6 +1,11 @@
 .App {
   font-family: sans-serif;
-  
+  text-align: left;
+  width: 100%;
+  max-width: 1200px; /* O el ancho máximo deseado para el contenido */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 20px; /* Agrega espacio alrededor del contenido */
+  text-align: left;
 }
 
 #root{

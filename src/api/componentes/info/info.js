@@ -31,7 +31,7 @@ export default class Info extends React.Component{
                            Turno Vespertino
                            de 18:20 a 21:30 
                      </div>
-                        <div className="col-sm text-light">
+                        <div className="col-sm text-light bg-dark mb-3">
                            <p className="nav-link text-light" href="#">Que no debo hacer...</p>
                            Una vez ingresdo al establecimiento no se puede volver a salir del instituto hasta el horario finalizado.
                            No se debe traer bebidas alcohólicas ni estupefacientes.
@@ -50,15 +50,15 @@ export default class Info extends React.Component{
 
                <div className="container mt-5 ">
                   <div className="row">
-               <div className="col-sm  ps-5 col-md-4 rounded-3 text-warning">
+               <div className="col-sm rounded-3 text-warning fs-5 border">
                <p className="nav-link text-warning "> AMARILLO </p> 
                   Captanes : Fatima Silva, Lautaro Zunia, Oriana Longo,Neli Montalva, Kiara Destellos, Camila Ozuna, Juaco Molina, Denis Montalva, Lautaro Olmos, Luisana Lopes, Martin Gonzales,Martina Cortez.
                </div>
-               <div className="col-md-4  ps-5 rounded-3 text-danger">
+               <div className="col-md-4  rounded-3 text-danger fs-5 border ">
                <p className="nav-link text-danger"> ROJO </p> 
                   Captanes : Fatima Silva, Lautaro Zunia, Oriana Longo,Neli Montalva, Kiara Destellos, Camila Ozuna, Juaco Molina, Denis Montalva, Lautaro Olmos, Luisana Lopes, Martin Gonzales,Martina Cortez.
                </div>
-               <div className="col-sm col-md-4 ps-5 rounded-3 text-success">
+               <div className="col-sm rounded-3 text-successs fs-5 border ">
                <p className="nav-link text-success"> VERDE </p> 
                   Captanes : Fatima Silva, Lautaro Zunia, Oriana Longo,Neli Montalva, Kiara Destellos, Camila Ozuna, Juaco Molina, Denis Montalva, Lautaro Olmos, Luisana Lopes, Martin Gonzales,Martina Cortez.
                   </div>
