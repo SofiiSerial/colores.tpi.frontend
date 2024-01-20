@@ -50,26 +50,23 @@ export default class FormularioModifJuego extends React.Component{
   render() {
     return(
     <div>
-      <ModalBody>
         <div className="form-group">
           <label htmlFor="deporte">deporte</label>
-          <input className="form-control" type="text" name="deporte" id="deporte" onChange={this.handleChange} value={this.state.deporte}/>
+          <input className="form-control" type="text" name="deporte" id="deporte" onChange={(e) => this.setState({deporte:e.target.value})} value={this.state.deporte}/>
           <br />
           <label htmlFor="lugar">lugar</label>
-          <input className="form-control" type="text" name="lugar" id="lugar" onChange={this.handleChange} value={this.state.lugar}/>
+          <input className="form-control" type="text" name="lugar" id="lugar" onChange={(e) => this.setState({lugar:e.target.value})} value={this.state.lugar}/>
           <br />
           <label htmlFor="hora">hora</label>
-          <input className="form-control" type="text" name="hora" id="hora" onChange={this.handleChange} value={this.state.hora}/>
+          <input className="form-control" type="text" name="hora" id="hora" onChange={(e) => this.setState({hora:e.target.value})} value={this.state.hora}/>
           <br />
           <label htmlFor="ganador">ganador</label>
-          <input className="form-control" type="text" name="ganador" id="ganador" onChange={this.handleChange} value={this.state.ganador}/>
+          <input className="form-control" type="text" name="ganador" id="ganador" onChange={(e) => this.setState({ganador:e.target.value})} value={this.state.ganador}/>
         </div>
-      </ModalBody>
 
-      <ModalFooter>
         <button className="btn btn-danger" onClick={()=>this.peticionDelete()}>guardar</button>
         <button className="btn btn-secundary" onClick={()=>this.setState({modalEliminar: false})}>cancelar</button>
-      </ModalFooter>
+    
     </div>
     )
   }

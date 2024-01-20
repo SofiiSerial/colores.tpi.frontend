@@ -34,7 +34,6 @@ export default class InfoJuego extends React.Component{
                         this.props.juego.ganador
                     }  </p>
                     <p> <button className="boton btn btn-warning" onClick={() => this.props.editarDatos(this.props)}> modificar</button></p>
-                    //con un if o un == isadmin
             
                 </div>
             
