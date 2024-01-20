@@ -2,13 +2,16 @@ import React from "react";
 import "./Juegos.css";
 import axios from "axios"; 
 import InfoJuego from "../infoJuego/infoJuego";
-
+import FormularioModifJuego from "../formularioModifJuego/formularioModifJuego";
 
 export default class Juegos extends React.Component{
      constructor(props){
         super(props); 
-        this.state = {
+        this.state = { 
           diasJuegos:[],
+
+          ResultadoModif:false,
+
         
             //juegos:[] //aca creamos un tipo de variable para un array
       }
@@ -72,23 +75,32 @@ export default class Juegos extends React.Component{
       
     }
 
+    MostrarFormulario(){
+
+      this.setState({ResultadoModif: !this.state.ResultadoModif});
+    }
+
     render(){
         return(
           <div className="juegos">
+            {this.state.ResultadoModif &&
+                      <FormularioModifJuego
+                      datosJuegos={this.state.diasJuegos}
+                      ></FormularioModifJuego>
+            }
             <div className="container mt-12 ">
                 <div className="row">
                 <div className="col-12">
                   <p className="fs-2 text-light mt-5">
                   <strong> Juegos que se realizaran en la semana </strong></p>
                 </div> 
-                
                 {this.state.diasJuegos.map((dia,index) => {
                   return(
                     <div className="col text-light border" key={index}>
                       <h3>{dia.dia}</h3>
                       {dia.juegos.map((juego,index) => {
                         return(
-                          <InfoJuego key={index}juego={juego}/>
+                          <InfoJuego key={index}juego={juego} editarDatos={() => this.MostrarFormulario()} />
                         )
                       })}
                     </div>

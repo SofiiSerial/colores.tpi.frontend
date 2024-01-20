@@ -21,7 +21,6 @@ export default class InfoJuego extends React.Component{
         return(
 
 
-        
                 <div><p>{
                         this.props.juego.deporte
                     }   </p>
@@ -34,8 +33,9 @@ export default class InfoJuego extends React.Component{
                     <p>{
                         this.props.juego.ganador
                     }  </p>
-                    <p> <button className="boton btn btn-warning" onClick={(e) => this.enviar(e)}> modificar </button></p>
+                    <p> <button className="boton btn btn-warning" onClick={() => this.props.editarDatos(this.props)}> modificar</button></p>
                     //con un if o un == isadmin
+            
                 </div>
             
         )
