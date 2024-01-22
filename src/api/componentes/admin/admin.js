@@ -22,6 +22,7 @@ export default class admin extends React.Component{
       axios.post(url, datos)
       .then((resp) => {
         console.log(resp.data);
+        sessionStorage.setItem("rol", resp.data.user.rol)
       })
       .catch((error)=>{
         console.log(error);

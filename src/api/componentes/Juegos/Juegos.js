@@ -8,6 +8,7 @@ export default class Juegos extends React.Component{
      constructor(props){
         super(props); 
         this.state = { 
+          formularioJuego:null,
           diasJuegos:[],
 
           ResultadoModif:false,
@@ -75,9 +76,10 @@ export default class Juegos extends React.Component{
       
     }
 
-    MostrarFormulario(){
+    MostrarFormulario(juego){
 
-      this.setState({ResultadoModif: !this.state.ResultadoModif});
+      this.setState({ResultadoModif: !this.state.ResultadoModif,formularioJuego: juego});
+      this.mostrar();
     }
 
     render(){
@@ -85,7 +87,9 @@ export default class Juegos extends React.Component{
           <div className="juegos">
             {this.state.ResultadoModif &&
                       <FormularioModifJuego
-                      datosJuegos={this.state.diasJuegos}
+                      datosJuegos={this.state.formularioJuego}
+                      mostrarDatos={() => this.mostrar()}
+                      MostrarFormulario={() => this.MostrarFormulario(null)}
                       ></FormularioModifJuego>
             }
             <div className="container mt-12 ">
@@ -100,7 +104,7 @@ export default class Juegos extends React.Component{
                       <h3>{dia.dia}</h3>
                       {dia.juegos.map((juego,index) => {
                         return(
-                          <InfoJuego key={index}juego={juego} editarDatos={() => this.MostrarFormulario()} />
+                          <InfoJuego key={index}juego={juego} editarDatos={() => this.MostrarFormulario(juego)} />
                         )
                       })}
                     </div>

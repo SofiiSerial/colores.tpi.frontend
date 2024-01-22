@@ -13,37 +13,61 @@ export default class FormularioModifJuego extends React.Component{
          deporte: "",
          hora: "",
          lugar: "",
-         ganador: ""
+         ganador: "",
+         dia: "",
+         turno: ""
 
         }
    
    }
-   ActualizarJuego(e) {
-    e.preventDefault();
 
-   modalInsertar=()=>{
-    this.setState({modalInsertar: !this.state.modalInsertar});
-    }
+   componentDidMount(){
     
+    this.setState({
+      deporte:this.props.datosJuegos.deporte,
+      hora: this.props.datosJuegos.hora,
+      lugar: this.props.datosJuegos.lugar,
+      ganador: this.props.datosJuegos.ganador,
+      id_juegos:this.props.datosJuegos.id_juegos,
+      dia: this.props.datosJuegos.dia,
+      turno: this.props.datosJuegos.turno
+      
+    })
+   
+  }
 
+   ActualizarJuego() {
+    
     // Aquí asumimos que tienes el ID del juego que deseas actualizar, 
     // reemplaza 'ID_DEL_JUEGO' con el valor real del ID.
-    const idJuego = id_juegos;
+    const config = {
+      params:{id_juegos: this.state.id_juegos}
+    }
+
     
     const url = `http://localhost:3203/api/juegos/`;
     //${idJuego}`;
     
-    const datosActualizados = 
-        this.props.id_juegos
-    
+    const datosActualizados = {
+      id_tipo:this.state.deporte,
+      hora: this.state.hora,
+      lugar: this.state.lugar,
+      ganador: this.state.ganador,
+      id_juegos:this.state.id_juegos,
+      dia: this.state.dia,
+      turno: this.state.turno
+    } 
 
-    axios.put(url, datosActualizados)
+    axios.put(url, datosActualizados, config)
       .then((resp) => {
         console.log(resp.data);
       })
       .catch((error) => {
         console.log(error);
-      });
+      }); 
+
+      this.props.MostrarFormulario()
+      this.props.mostrarDatos()
   }
         
 
@@ -52,7 +76,7 @@ export default class FormularioModifJuego extends React.Component{
     <div>
         <div className="form-group">
           <label htmlFor="deporte">deporte</label>
-          <input className="form-control" type="text" name="deporte" id="deporte" onChange={(e) => this.setState({deporte:e.target.value})} value={this.state.deporte}/>
+          <input className="form-control" type="number" name="deporte" id="deporte" onChange={(e) => this.setState({deporte:e.target.value})} value={this.state.deporte}/>
           <br />
           <label htmlFor="lugar">lugar</label>
           <input className="form-control" type="text" name="lugar" id="lugar" onChange={(e) => this.setState({lugar:e.target.value})} value={this.state.lugar}/>
@@ -64,8 +88,8 @@ export default class FormularioModifJuego extends React.Component{
           <input className="form-control" type="text" name="ganador" id="ganador" onChange={(e) => this.setState({ganador:e.target.value})} value={this.state.ganador}/>
         </div>
 
-        <button className="btn btn-danger" onClick={()=>this.peticionDelete()}>guardar</button>
-        <button className="btn btn-secundary" onClick={()=>this.setState({modalEliminar: false})}>cancelar</button>
+        <button className="btn btn-danger" onClick={()=>this.ActualizarJuego()}>guardar</button>
+        <button className="btn btn-secundary" onClick={()=>this.props.MostrarFormulario(null)}>cancelar</button>
     
     </div>
     )

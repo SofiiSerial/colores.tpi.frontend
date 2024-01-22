@@ -12,6 +12,7 @@ import Juegos from "./api/componentes/Juegos/Juegos";
 
   export default function App() {
   return (
+    
     <div className="App">
       <div>
                     <ul className="nav mt-4 rounded-2 text-left"> 
@@ -28,9 +29,10 @@ import Juegos from "./api/componentes/Juegos/Juegos";
                             <a className="nav-link text-light" href="/Admin">Admin</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-light" href="/resultadoColor"> Color Ganador</a>
+                            <a className="nav-link text-light" href="/resultadoColor"> Resultados Actuales</a>
                         </li>
                     </ul>
+
       <BrowserRouter>
         <Routes>
           <Route path="/ConsultarColor" element={<ConsultarColor/>}/>
