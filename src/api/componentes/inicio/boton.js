@@ -17,5 +17,3 @@ export default class boton extends React.Component{
      />;
   }
 }
-
-//onClick={()=onClick>()}

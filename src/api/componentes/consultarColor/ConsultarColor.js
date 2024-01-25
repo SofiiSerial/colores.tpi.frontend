@@ -36,28 +36,28 @@ export default class ConsultarColor extends React.Component{
           <div className="consultarColor">
          <div className="conteiner">
             <div className="fs-2 text-light mt-5">Consultá tu color</div>
-            <div className="fs-4 text-light mt-5"> Ingrese sus datos en este formulario para que podamos verificar su identidad y su color correspondiente. </div>
+            <div className="fs-3 text-light mt-2"> Ingrese sus datos en este formulario para que podamos verificar su identidad y su color correspondiente. </div>
             <form> 
-              <label> 
+              <label className="text-light mt-4"> 
                 DNI
               </label>
               <div> 
                 <input 
-                  className= "col-3 mx-auto text-negro bg-opacity bg-light"
+                  className= "col-3 mx-auto text-negro bg-opacity bg-light border rounded-3"
                   value={this.state.documento}
                   onChange={(e) => this.setState({documento:e.target.value})}
                 />
               </div>
-              <button className="boton btn btn-warning mt-5" onClick={(e) => this.enviar(e)}> Continuar </button>
+              <button className="boton btn btn-warning mt-2 " onClick={(e) => this.enviar(e)}> Continuar </button>
            </form>
            <div className="contacto">
            { this.state.resultadoC !==null&&
            
-           <div class="container m-10" className={this.state.resultadoC[0].color} >
-               <p className="fs-2 text-light mt-5 py-3  col-12"> Tu color es:  </p>
+           <div class="container m-10 border rounded-3" className={this.state.resultadoC[0].color} >
+               <p className="fs-2 text-light mt-5 py-3  col-12 border rounded-3"> Tu color es:  </p>
                <p class="text-light border bg-opacity-10 p-4 mt-4 col-md-12 rounded-3"  > {this.state.resultadoC[0].color}</p>
 
-               <p className="fs-4 text-info-center text-light mt-5 px-5 col-12"> Una vez asignado su color tendrá que venir con la vestimenta (remera, pantalon) adecuados a el color, <br/>
+               <p className="fs-4 text-info-center text-light mt-5 px-5 col-12 "> Una vez asignado su color tendrá que venir con la vestimenta (remera, pantalon) adecuados a el color, <br/>
                despues tendra que ir a su tribuna que será acompañado en el momentos por su capitan. </p>     
            </div>
            }

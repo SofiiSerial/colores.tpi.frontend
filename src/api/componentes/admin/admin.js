@@ -11,16 +11,17 @@ export default class admin extends React.Component{
     }
     enviar(e){  
       e.preventDefault()
-      console.log(this.state.usuario)
+      console.log(this.state.usuario)//Imprime en la consola el valor actual del campo de usuario en el estado
+      // del componente React. Esto podría ser útil para depurar y verificar que los datos del usuario se están capturando correctamente.
       console.log(this.state.contrasenia)
-      const url = "http://localhost:3203/api/usuarios/login" //sin el valor de documento
-      const datos = {
-        usuario: this.state.usuario,//document.getElementById("usuario").value, 
+      const url = "http://localhost:3203/api/usuarios/login" //Define la URL a la que se enviará la solicitud POST. En este caso, parece ser una ruta de inicio de sesión en un servidor local.
+      const datos = { //Crea un objeto llamado datos que contiene la información del usuario y la contraseña obtenida del estado del componente React.
+        usuario: this.state.usuario,
         contrasenia: this.state.contrasenia//123456 
       }
       console.log(datos)
       axios.post(url, datos)
-      .then((resp) => {
+      .then((resp) => { // Maneja la respuesta exitosa de la solicitud POST. Imprime en la consola la respuesta del servidor y almacena el rol del usuario en el almacenamiento de sesión.
         console.log(resp.data);
         sessionStorage.setItem("rol", resp.data.user.rol)
       })
@@ -29,13 +30,18 @@ export default class admin extends React.Component{
       })
      
   } 
+  //En resumen, esta función se utiliza para manejar el envío de datos de inicio de sesión a través de una 
+  //solicitud POST a un servidor, y posteriormente procesa la respuesta del servidor y almacena el rol del 
+  //usuario en el almacenamiento de sesión. Ten en cuenta que el código asume el uso de la biblioteca Axios
+  // para realizar la solicitud HTTP y también asume que el componente React tiene un estado (this.state) que almacena la información del usuario y la contraseña.
+
 
     render(){
       return(
         <div className="consultarColor">
        <div className="container">
           <div className="fs-2 text-light mt-5"> ADMIN </div>
-          <div className="fs-4 text-light mt-5"> Ingrese sus datos en este formulario para q podamos verificar su identidad y su color correspondiente   </div>
+          <div className="fs-4 text-light mt-5"> Ingrese sus datos para poder identificar su usuario</div>
           <form> 
             <div class="form-floating mb-3">
               <input 

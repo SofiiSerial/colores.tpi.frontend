@@ -40,13 +40,13 @@ export default class ConsultarColor extends React.Component{
     render(){
         return(
         <div className= "">
-          <div className="mb-5 text-light col text-light border">
-          <p className="form-labelcol text-light border ">COLOR</p>
+          <div className="mb-5 text-light col text-light border rounded-3">
+          <p className="form-labelcol text-light border rounded-3">COLOR</p>
           <p> {this.state.color}</p>
           </div>
         
-        <div class="mb-5 text-light col text-light border">
-          <p  class="form-label col text-light border ">PUNTAJE</p>
+        <div class="mb-5 text-light col text-light border rounded-3">
+          <p  class="form-label col text-light border rounded-3">PUNTAJE</p>
           <p> {this.state.puntaje}</p>
           </div>
         </div>

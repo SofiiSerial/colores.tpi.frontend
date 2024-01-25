@@ -100,7 +100,7 @@ export default class Juegos extends React.Component{
                 </div> 
                 {this.state.diasJuegos.map((dia,index) => {
                   return(
-                    <div className="col text-light border" key={index}>
+                    <div className="col text-light " key={index}>
                       <h3>{dia.dia}</h3>
                       {dia.juegos.map((juego,index) => {
                         return(

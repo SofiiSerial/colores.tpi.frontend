@@ -15,9 +15,9 @@ import Juegos from "./api/componentes/Juegos/Juegos";
     
     <div className="App">
       <div>
-                    <ul className="nav mt-4 rounded-2 text-left"> 
-                        <li className="nav-item">
-                            <a className="nav-link active text-light" aria-current="page" href="/">Inicio</a>
+                    <ul className="nav mt-4 rounded-2 text-left nav nav-tabs"> 
+                        <li className="nav-item ">
+                            <a className="nav-link active text-black " aria-current="page" href="/">Inicio</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link text-light" href="/Juegos">Juegos</a>
