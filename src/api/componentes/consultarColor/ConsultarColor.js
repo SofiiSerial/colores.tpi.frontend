@@ -14,21 +14,26 @@ export default class ConsultarColor extends React.Component{
       }
       enviar(e){  
         e.preventDefault()//previene q esa pagina se actualize sola 
-        const url = "http://localhost:3203/api/usuarios/buscarcolor" //sin el valor de documento
-        const config = {
-          params: { documento: this.state.documento }
-        }
-        axios.get(url, config)
-        .then((resp) => {
-            //tenemos q insertar lo q queremos mostrar
-          console.log(resp.data.resultado); //muesttra en consola despues se elimina
-          this.setState({resultadoC: resp.data.resultado}); //
-        })
-        .catch((error)=>{
-          console.log(error);
-        })
-
+          if(this.state.documento == ""){
+            alert('El campo NO puede estar vacio');
+          }else{
+            const url = "http://localhost:3203/api/usuarios/buscarcolor" //sin el valor de documento
+            const config = {
+              params: { documento: this.state.documento }
+            }
+            axios.get(url, config)
+            .then((resp) => {
+                //tenemos q insertar lo q queremos mostrar
+              console.log(resp.data.resultado); //muesttra en consola despues se elimina
+              this.setState({resultadoC: resp.data.resultado}); //
+            })
+            .catch((error)=>{
+              console.log(error);
+            })
+          }
       } 
+      
+      
 
     render(){
         return(
@@ -48,10 +53,10 @@ export default class ConsultarColor extends React.Component{
                   onChange={(e) => this.setState({documento:e.target.value})}
                 />
               </div>
-              <button className="boton btn btn-warning mt-2 " onClick={(e) => this.enviar(e)}> Continuar </button>
+              <button class="boton" className="boton btn btn-warning mt-2 "  onClick={(e) => this.enviar(e)}> Continuar </button>
            </form>
            <div className="contacto">
-           { this.state.resultadoC !==null&&
+           { this.state.resultadoC !==null&& this.state.resultadoC[0].color !==null&&
            
            <div class="container m-10 border rounded-3" className={this.state.resultadoC[0].color} >
                <p className="fs-2 text-light mt-5 py-3  col-12 border rounded-3"> Tu color es:  </p>
