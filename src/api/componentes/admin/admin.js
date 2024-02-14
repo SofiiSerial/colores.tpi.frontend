@@ -4,13 +4,14 @@ import "bootstrap";
 
 export default class admin extends React.Component{
      constructor(props){
-        super(props); 
-        this.state = { usuario:"",contrasenia:""}
-    
-        
+        super(props);
+        this.state = { usuario:"",contrasenia:"", validacion:null }
     }
-    enviar(e){  
-      e.preventDefault()
+    enviar(e){
+      e.preventDefault() //Esta línea se utiliza para prevenir el comportamiento predeterminado del evento
+      if(this.state.usuario == "" || this.state.contrasenia == ""){
+        alert('El campo NO puede estar vacio');
+      }else{
       console.log(this.state.usuario)//Imprime en la consola el valor actual del campo de usuario en el estado
       // del componente React. Esto podría ser útil para depurar y verificar que los datos del usuario se están capturando correctamente.
       console.log(this.state.contrasenia)
@@ -24,11 +25,12 @@ export default class admin extends React.Component{
       .then((resp) => { // Maneja la respuesta exitosa de la solicitud POST. Imprime en la consola la respuesta del servidor y almacena el rol del usuario en el almacenamiento de sesión.
         console.log(resp.data);
         sessionStorage.setItem("rol", resp.data.user.rol)
+        this.setState({validacion: resp.data.validacion});//cambiar state de validacion
       })
       .catch((error)=>{
         console.log(error);
       })
-     
+    }
   } 
   //En resumen, esta función se utiliza para manejar el envío de datos de inicio de sesión a través de una 
   //solicitud POST a un servidor, y posteriormente procesa la respuesta del servidor y almacena el rol del 
@@ -40,26 +42,32 @@ export default class admin extends React.Component{
       return(
         <div className="consultarColor">
        <div className="container">
-          <div className="fs-2 text-light mt-5"> ADMIN </div>
-          <div className="fs-4 text-light mt-5"> Ingrese sus datos para poder identificar su usuario</div>
+          <div className="fs-2 text-light mt-5 "> ADMIN </div>
+          <div className="fs-4 text-light mt-5 "> Ingrese sus datos para poder identificar su usuario</div>
           <form> 
             <div class="form-floating mb-3">
               <input 
               value={this.state.usuario}
 
               onChange={(e) => this.setState({usuario:e.target.value})}
-              type="text" class="form-control mt-3 " id="usuario" placeholder="usuario"/>
+              type="text" class="form-control mt-3 w-50" id="usuario" placeholder="usuario"/>
               <label for="usuario">Admin</label>
 
-            <div class="form-floating ">
+            <div class="form-floating w-50">
              <input 
              value={this.state.contrasenia}
              onChange={(e) => this.setState({contrasenia:e.target.value}) }
-             type="password" class="form-control mt-3 " id="contrasenia" placeholder="Password"/>
+             type="password" class="form-control mt-3 w-60" id="contrasenia" placeholder="Password"/>
                <label for="contrasenia">Pass</label>
             </div>
             </div>
             <button className="boton btn btn-warning mt-3" onClick={(e) => this.enviar(e)}> Continuar </button>
+            {this.state.validacion !==null&&
+
+            <div class="container m-3" >
+            <p className="fs-2 text-light"> validacion exitosa </p>    
+            </div>
+            /*crear div solo si validacion no esta vacio*/}
          </form>
             <div> 
          

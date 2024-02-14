@@ -22,7 +22,7 @@ export default class FormularioModifJuego extends React.Component{
 
    componentDidMount(){
     
-    this.setState({
+    this.setState({ // setState: es un método en React que se utiliza para actualizar el estado del componente//this.setState: Se refiere al método setState del componente, que se utiliza para actualizar el estado del componente y, posteriormente, volver a renderizar el componente con los nuevos datos.
       deporte:this.props.datosJuegos.deporte,
       hora: this.props.datosJuegos.hora,
       lugar: this.props.datosJuegos.lugar,
@@ -34,7 +34,7 @@ export default class FormularioModifJuego extends React.Component{
     })
    
   }
-
+  //FUNCION
    ActualizarJuego() {
     
     // Aquí asumimos que tienes el ID del juego que deseas actualizar, 
@@ -88,8 +88,8 @@ export default class FormularioModifJuego extends React.Component{
           <label htmlFor="hora">hora</label>
           <input className="form-control" type="text" name="hora" id="hora" onChange={(e) => this.setState({hora:e.target.value})} value={this.state.hora}/>
           <br />
-          <label htmlFor="ganador">ganador</label>
-          <input className="form-control" type="text" name="ganador" id="ganador" onChange={(e) => this.setState({ganador:e.target.value})} value={this.state.ganador}/>
+          <label htmlFor="turno">turno</label>
+          <input className="form-control" type="text" name="turno" id="turno" onChange={(e) => this.setState({turno:e.target.value})} value={this.state.turno}/>
         </div>
 
         <button className="btn btn-secondary mt-4 me-md-2" onClick={()=>this.ActualizarJuego()}>guardar</button>

@@ -21,7 +21,7 @@ export default class InfoJuego extends React.Component{
     esAdmin(){
         let verificacion = sessionStorage.getItem("rol");
             if (verificacion == "admin") {
-                this.setState({admin: true})
+                this.setState({admin: true}) //cambia el valor de falso a verdadero
                 }else {
                 this.setState({admin: false})
                 }
@@ -31,7 +31,7 @@ export default class InfoJuego extends React.Component{
         return(
 
 
-                <div className="border rounded-3  "><p>{
+                <div className="border-top"><p>{
                         this.props.juego.deporte
                     }   </p>
                     <p>{
@@ -41,7 +41,7 @@ export default class InfoJuego extends React.Component{
                         this.props.juego.hora
                     }</p>
                     <p>{
-                        this.props.juego.ganador
+                        this.props.juego.turno
                     }  </p>
                     { this.state.admin &&
                         <p> <button className="btn btn-secondary col-10 center " onClick={() => this.props.editarDatos(this.props)}> modificar</button></p>

@@ -38,7 +38,7 @@ export default class Inicio extends React.Component{
                   <div className="container-fluid p-5 ">
                      <div className="row" >
                         <div className="col "> <a href="https://instagram.com/intertecnos_2023?igshid=YzAwZjE1ZTI0Zg==" class="text-decoration-none text-seccess"> Instragram</a></div>
-                        <div className="col "> <a href="http://revista.ctpoba.com.ar/?fbclid=IwAR0rY-KJ-Ohxns3OvyM8xEFco70KsVAZo4Mq9DSQX3ghmdwWMridbVeFacE" class="text-decoration-none text-seccess">facebook</a></div>
+                        <div className="col "> <a href="" class="text-decoration-none text-seccess">facebook</a></div>
 
                   </div>
                      </div>
