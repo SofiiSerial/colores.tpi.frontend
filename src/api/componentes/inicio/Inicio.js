@@ -23,10 +23,9 @@ export default class Inicio extends React.Component{
                         por el colegio, en los que los estudiantes compiten en diversas disciplinas como deportes, 
                         música, arte, matemáticas, bailes entre otros. Estas competencias fomentan el compañerismo, el espíritu deportivo y el intercambio de conocimientos entre los participantes. También son una oportunidad para mostrar talento y habilidades en diferentes áreas. 
                         </em></p>
-                     <div className="mt-20">
+                     <div>
                         <button className="boton btn btn-warning text-dark btn btn-outline-secondary">
-                           <a class = "nav-link text-light" href="/consultarColor"> Consultar Color </a></button>
-
+                        <a class = "nav-link text-light" href="/consultarColor"> Consultar Color </a></button>
                      </div>
                </div>
             </div>
@@ -38,7 +37,6 @@ export default class Inicio extends React.Component{
                   <div className="container-fluid p-5 ">
                      <div className="row" >
                         <div className="col "> <a href="https://instagram.com/intertecnos_2023?igshid=YzAwZjE1ZTI0Zg==" class="text-decoration-none text-seccess"> Instragram</a></div>
-                        <div className="col "> <a href="" class="text-decoration-none text-seccess">facebook</a></div>
 
                   </div>
                      </div>
