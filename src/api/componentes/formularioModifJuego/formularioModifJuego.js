@@ -3,7 +3,6 @@ import React from "react";
 import axios from "axios";
 import "bootstrap";
 import "reactstrap";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
 //Estás inicializando el estado del componente FormularioModifJuego con 7 propiedades: 
 export default class FormularioModifJuego extends React.Component{
