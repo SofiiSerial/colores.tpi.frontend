@@ -26,10 +26,10 @@ import Juegos from "./api/componentes/Juegos/Juegos";
                             <a className="nav-link text-light" href="/Info">Informacion</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-light" href="/Admin">Admin</a>
+                            <a className="nav-link text-light" href="/resultadoColor"> Resultados Actuales</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-light" href="/resultadoColor"> Resultados Actuales</a>
+                            <a className="nav-link text-right" href="/Admin">Login</a>
                         </li>
                     </ul>
 
