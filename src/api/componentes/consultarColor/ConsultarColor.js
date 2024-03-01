@@ -19,7 +19,7 @@ export default class ConsultarColor extends React.Component{
           }else{
             const url = "http://localhost:3203/api/usuarios/buscarcolor" //sin el valor de documento
             const config = {
-              params: { documento: this.state.documento }
+              params: { documento: this.state.documento } 
             }
             axios.get(url, config)
             .then((resp) => {
