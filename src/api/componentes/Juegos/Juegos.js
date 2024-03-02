@@ -9,48 +9,27 @@ export default class Juegos extends React.Component{
         super(props); 
         this.state = { 
           formularioJuego:null,
-          diasJuegos:[],
-
-          ResultadoModif:false,
-
-        
-            //juegos:[] //aca creamos un tipo de variable para un array
+          diasJuegos:[],//Esta propiedad se inicializa como un arreglo vacío. 
+          //Es probable que se utilice para almacenar los días en los que se juegan los juegos.
+        ResultadoModif:false,
       }
     }
     componentDidMount(){
     this.mostrar(); 
   }
 
-  /*enviar(e){
-    e.preventDefault();//previene q esa pagina se actualize sola
-    const url = "http://localhost:3203/api/juegos" //
-    const config = {
-      params: {}
-    }
-    axios.get(url, config)
-    .then((resp) => {
-      
-       //tenemos q insertar lo q queremos mostrar
-        console.log(resp.data); //muesttra en consola despues se elimina
-      //this.setState({resultadoC: resp.data.resultado}); //
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
-  }*/
-
-   mostrar(){
+   mostrar(){ 
       //consulta de axios
       const url = "http://localhost:3203/api/juegos" //llama a la basse de datos
       const config = {
         params: {}
       }
-      //const diasSemana =["lunes","martes","miercoles","jueves","viernes"];
+  
       axios.get(url)
       .then((resp) => {
-        //console.log(resp.data);
+       
         const juegos= resp.data.juegos;
-        //console.log(juegos);
+      
         let diasJuegos = [];
         //para no repetir los dias, se crea un conjunto. Los conjuntos (set) no tienen duplicados
         let diasUnicos = new Set();

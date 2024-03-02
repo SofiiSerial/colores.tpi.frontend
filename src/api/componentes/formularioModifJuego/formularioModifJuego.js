@@ -5,6 +5,7 @@ import "bootstrap";
 import "reactstrap";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
+//Estás inicializando el estado del componente FormularioModifJuego con 7 propiedades: 
 export default class FormularioModifJuego extends React.Component{
     constructor(props){
        super(props); 
@@ -22,7 +23,14 @@ export default class FormularioModifJuego extends React.Component{
    }
 
    componentDidMount(){
+<<<<<<< HEAD
     
+=======
+
+     // this.setState:
+     // Se refiere al método setState del componente, que se utiliza para actualizar el estado del
+     // componente y, posteriormente, volver a renderizar el componente con los nuevos datos.
+>>>>>>> 765d05f222f80251a5284bd5eb01619cf474e883
     this.setState({
       deporte:this.props.datosJuegos.deporte,
       hora: this.props.datosJuegos.hora,
@@ -64,6 +72,8 @@ export default class FormularioModifJuego extends React.Component{
     axios.put(url, datosActualizados, config)
       .then((resp) => {
         console.log(resp.data);
+        //uando se completa la solicitud, se maneja la respuesta exitosa en la función `.then()`,
+        // donde se imprime en la consola la respuesta del servidor.
       })
       .catch((error) => {
         console.log(error);
@@ -80,17 +90,30 @@ export default class FormularioModifJuego extends React.Component{
       //Hay cuatro campos en el formulario, cada uno representado por un conjunto de etiquetas <label> e <input>
     <div>
         <div className="form-group col-4 text-light mt-4">
+
           <label htmlFor="deporte">deporte</label>
           <input className="form-control " type="number" name="deporte" id="deporte" onChange={(e) => this.setState({deporte:e.target.value})} value={this.state.deporte}/>
+
           <br />
+
           <label htmlFor="lugar">lugar</label>
           <input className="form-control" type="text" name="lugar" id="lugar" onChange={(e) => this.setState({lugar:e.target.value})} value={this.state.lugar}/>
+
           <br />
+
           <label htmlFor="hora">hora</label>
           <input className="form-control" type="text" name="hora" id="hora" onChange={(e) => this.setState({hora:e.target.value})} value={this.state.hora}/>
+
           <br />
+<<<<<<< HEAD
           <label htmlFor="ganador">ganador</label>
           <input className="form-control" type="text" name="ganador" id="ganador" onChange={(e) => this.setState({ganador:e.target.value})} value={this.state.ganador}/>
+=======
+
+          <label htmlFor="turno">turno</label>
+          <input className="form-control" type="text" name="turno" id="turno" onChange={(e) => this.setState({turno:e.target.value})} value={this.state.turno}/>
+          
+>>>>>>> 765d05f222f80251a5284bd5eb01619cf474e883
         </div>
 
         <button className="btn btn-secondary mt-4 me-md-2" onClick={()=>this.ActualizarJuego()}>guardar</button>
