@@ -19,7 +19,8 @@ export default class ConsultarColor extends React.Component{
           }else{
             const url = "http://localhost:3203/api/usuarios/buscarcolor" //sin el valor de documento
             const config = {
-              params: { documento: this.state.documento } 
+              params: { documento: this.state.documento } //En este caso, this.state.documento se utilizaría para acceder
+        // al valor actual de la propiedad documento del estado de MiComponente y podría ser renderizado en el DOM dentro del componente.
             }
             axios.get(url, config)
             .then((resp) => {
@@ -32,7 +33,8 @@ export default class ConsultarColor extends React.Component{
             })
           }
       } 
-      
+      //Esta función se ejecutará si la promesa es rechazada en algún punto de la cadena de
+       //promesas, es decir, si ocurre un error durante la solicitud HTTP u otro proceso asíncrono.
       
 
     render(){
